@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ajude-nos a viajar em nossa lua de mel</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fbf6ee;--ink:#2b2220;--wine:#7a1f35;--gold:#c79a3b;--card:#fff;--soft:#f1e6d3}
+*{box-sizing:border-box}
+body{margin:0;font-family:Lato,sans-serif;background:var(--bg);color:var(--ink);padding-bottom:90px;line-height:1.6}
+h1,h2,h3{font-family:'Playfair Display',serif;margin:0}
+header{text-align:center;padding:90px 20px 60px;color:#fff;background:linear-gradient(rgba(60,10,25,.7),rgba(60,10,25,.8)),url(fotos/capa.jpg) center/cover,var(--wine)}
+header h1{font-size:clamp(2rem,6vw,3.6rem);max-width:800px;margin:0 auto 14px}
+header p{opacity:.9;font-size:1.1rem;margin:0 auto;max-width:560px}
+.total{max-width:420px;margin:28px auto 0;text-align:left;font-size:.9rem}
+section{max-width:1000px;margin:0 auto;padding:50px 20px}
+section>h2{color:var(--wine);font-size:2rem;text-align:center;margin-bottom:6px}
+.sub{text-align:center;color:#7b6a60;margin:0 0 28px}
+.line{width:60px;height:3px;background:var(--gold);margin:10px auto 22px;border-radius:2px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:28px;align-items:center}
+.photo{aspect-ratio:4/3;border-radius:16px;background:var(--soft) center/cover;box-shadow:0 8px 24px #0002;display:flex;align-items:center;justify-content:center;color:#a08c70;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px #0001;display:flex;flex-direction:column}
+.img{height:130px;background:var(--soft) center/cover;display:flex;align-items:center;justify-content:center;font-size:2.6rem}
+.body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.body h3{font-size:1.05rem}
+.price{color:var(--wine);font-weight:700;font-size:1.2rem}
+.prize{font-size:.82rem;background:#fff6dd;border:1px dashed var(--gold);padding:5px 8px;border-radius:8px}
+.bar{height:10px;background:var(--soft);border-radius:6px;overflow:hidden}
+.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold),var(--wine));border-radius:6px}
+.small{font-size:.8rem;color:#7b6a60}
+.step{margin-top:auto;display:flex;align-items:center;justify-content:center;gap:14px}
+.step button{width:36px;height:36px;border-radius:50%;border:1px solid var(--wine);background:#fff;color:var(--wine);font-size:1.3rem;cursor:pointer}
+.step button:hover{background:var(--wine);color:#fff}
+.step b{min-width:24px;text-align:center}
+.done{opacity:.85}.done .img{filter:grayscale(.4)}
+.tag{background:#2f7d4f;color:#fff;font-size:.75rem;padding:3px 10px;border-radius:20px;align-self:flex-start}
+#bar{position:fixed;left:0;right:0;bottom:0;background:var(--wine);color:#fff;padding:12px 20px;display:flex;justify-content:space-between;align-items:center;gap:10px;transform:translateY(100%);transition:.3s;z-index:5}
+#bar.on{transform:none}
+.btn{background:var(--gold);color:#2b2220;border:0;padding:12px 22px;border-radius:30px;font-weight:700;font-size:1rem;cursor:pointer;font-family:inherit}
+.btn.alt{background:#25a244;color:#fff}
+#modal{position:fixed;inset:0;background:#000a;display:none;align-items:center;justify-content:center;padding:16px;z-index:10}
+#modal.on{display:flex}
+.box{background:#fff;border-radius:16px;max-width:460px;width:100%;max-height:92vh;overflow:auto;padding:24px;text-align:center}
+.box ul{text-align:left;padding-left:18px;font-size:.92rem}
+.box input{width:100%;padding:10px;border:1px solid #ccc;border-radius:8px;font-size:1rem;margin:6px 0 12px}
+#qr{display:flex;justify-content:center;margin:12px 0}
+textarea{width:100%;height:70px;font-size:.75rem;border-radius:8px;padding:8px;border:1px solid #ccc}
+footer{text-align:center;padding:30px;color:#7b6a60;font-size:.9rem}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Ajude-nos a viajar em nossa lua de mel</h1>
+  <p>Escolha um presente, envie o Pix e faça parte da nossa viagem pela Bélgica 🇧🇪</p>
+  <div class="total"><div class="bar"><i id="gbar"></i></div><div id="gtxt" style="margin-top:6px;text-align:center"></div></div>
+</header>
+
+<section>
+  <h2>Nossa história</h2><div class="line"></div>
+  <div class="two">
+    <div class="photo" style="background-image:url(fotos/casal.jpg)">📷 fotos/casal.jpg</div>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore.</p>
+  </div>
+</section>
+
+<section style="background:var(--soft);max-width:none">
+  <div style="max-width:1000px;margin:auto">
+    <h2>Nossa viagem</h2><div class="line"></div>
+    <div class="two">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bruxelas, Antuérpia, Ghent, Bruges e Tournai: sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <div class="photo" style="background-image:url(fotos/mapa.jpg)">🗺️ fotos/mapa.jpg</div>
+    </div>
+  </div>
+</section>
+
+<div id="app"></div>
+
+<section style="text-align:center">
+  <h2>Como funciona</h2><div class="line"></div>
+  <p>1) Escolha seus presentes · 2) Pague via Pix (QR Code ou copia e cola) · 3) Envie o comprovante pelo WhatsApp para receber seus números do sorteio e nosso agradecimento.</p>
+</section>
+<footer>Feito com amor ❤️ · Obrigado por fazer parte desse sonho!</footer>
+
+<div id="bar"><div><b id="cnt"></b><br><span id="sum" style="font-size:1.3rem;font-weight:700"></span></div><button class="btn" onclick="openPay()">Finalizar presente 🎁</button></div>
+
+<div id="modal"><div class="box">
+  <h2 style="color:var(--wine)">Seu presente</h2>
+  <ul id="list"></ul>
+  <p><b>Total: <span id="mtot"></span></b></p>
+  <input id="nome" placeholder="Seu nome">
+  <div id="qr"></div>
+  <p class="small">Pague com o QR Code ou copie o código Pix:</p>
+  <textarea id="code" readonly></textarea><br><br>
+  <button class="btn" onclick="copyPix()" id="cp">Copiar código Pix</button><br><br>
+  <button class="btn alt" onclick="wpp()">Já paguei, enviar comprovante no WhatsApp</button><br><br>
+  <button onclick="modal.classList.remove('on')" style="background:none;border:0;color:#777;cursor:pointer">Fechar</button>
+</div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+/* ============ CONFIGURAÇÕES (edite aqui) ============ */
+const PIX_KEY="SUA-CHAVE-PIX-AQUI";      // e-mail, telefone (+5517999999999), CPF ou chave aleatória
+const PIX_NOME="Joao e Juliana";          // nome do recebedor (sem acentos, máx. 25 caracteres)
+const PIX_CIDADE="Barretos";              // cidade (sem acentos, máx. 15 caracteres)
+const WHATSAPP="5517999999999";           // seu WhatsApp com DDI+DDD, só números
+
+/* ============ PRESENTES ============
+   p = preço | t = total de cotas (1 = item único) | got = quantas JÁ foram presenteadas (atualize manualmente)
+   Fotos: coloque em fotos/ID.jpg (ex.: fotos/gravensteen.jpg) */
+const S=[
+{title:"Nos ajude com o transporte",sub:"Cada trecho de trem da nossa viagem",items:[
+ {id:"bru-ant",n:"Bruxelas → Antuérpia",p:150,t:1,got:0,e:"🚆"},
+ {id:"bru-leu",n:"Bruxelas → Leuven",p:100,t:1,got:0,e:"🚆"},
+ {id:"ant-gnt",n:"Antuérpia → Ghent",p:200,t:1,got:0,e:"🚆"},
+ {id:"gnt-bru",n:"Ghent → Bruges",p:120,t:1,got:0,e:"🚆"},
+ {id:"brg-tou",n:"Bruges → Tournai",p:200,t:1,got:0,e:"🚆"},
+ {id:"tou-bru",n:"Tournai → Bruxelas",p:200,t:1,got:0,e:"🚆"},
+ {id:"publico",n:"Transporte público",p:120,t:1,got:0,e:"🚌"},
+ {id:"bike-joao",n:"Aluguel de bicicleta para o João",p:250,t:1,got:0,e:"🚲"},
+ {id:"bike-juli",n:"Aluguel de bicicleta para a Juliana",p:250,t:1,got:0,e:"🚲"}]},
+{title:"Nos ajude com a alimentação",sub:"Para comermos bem em cada cidade",items:[
+ {id:"comida",n:"Cota de alimentação",p:200,t:30,got:0,e:"🍽️",prize:"🎁 Cada cota = 1 número no sorteio de uma garrafa de vinho francês + chocolate belga"}]},
+{title:"Degustação de chocolate belga e waffles",sub:"",items:[
+ {id:"choco",n:"Cota de chocolate e waffles",p:100,t:5,got:0,e:"🍫",prize:"🎁 Sorteio de chocolate belga"}]},
+{title:"Degustação de cerveja belga",sub:"",items:[
+ {id:"cerveja",n:"Cota de cerveja belga",p:100,t:5,got:0,e:"🍺",prize:"🎁 Sorteio de uma garrafa de cerveja belga"}]},
+{title:"Lembrancinhas",sub:"Para trazer um pedacinho da Bélgica",items:[
+ {id:"lembranca",n:"Lembrancinhas",p:250,t:1,got:0,e:"🎁"}]},
+{title:"Atrações",sub:"Experiências que queremos viver",items:[
+ {id:"museu-choco",n:"Museu do Chocolate (Bruxelas)",p:200,t:1,got:0,e:"🍫"},
+ {id:"catedral",n:"Catedral de Nossa Senhora (Antuérpia)",p:150,t:1,got:0,e:"⛪"},
+ {id:"barco",n:"Passeio de barco pelos canais de Bruges",p:200,t:1,got:0,e:"⛴️"},
+ {id:"gravensteen",n:"Castelo dos Condes (Ghent)",p:150,t:1,got:0,e:"🏰"},
+ {id:"belfort",n:"Campanário de Ghent",p:150,t:1,got:0,e:"🔔"}]},
+{title:"Hospedagem",sub:"Para termos um cantinho aconchegante",items:[
+ {id:"hotel",n:"Cota de hospedagem",p:150,t:10,got:0,e:"🛏️",prize:"🎁 Cada cota = 1 número no sorteio de cerveja belga + chocolate"}]}
+];
+
+/* ============ CÓDIGO ============ */
+const R=v=>v.toLocaleString("pt-BR",{style:"currency",currency:"BRL"});
+const cart={},all=S.flatMap(s=>s.items),$=id=>document.getElementById(id);
+const left=i=>i.t-i.got;
+
+function card(i){
+  const d=left(i)<=0,pct=i.got/i.t*100;
+  return `<div class="card ${d?'done':''}"><div class="img" style="background-image:url(fotos/${i.id}.jpg)">${i.e}</div>
+  <div class="body"><h3>${i.n}</h3><div class="price">${R(i.p)}${i.t>1?' <span class="small">/ cota</span>':''}</div>
+  ${i.t>1?`<div class="bar"><i style="width:${pct}%"></i></div><div class="small">${i.got} de ${i.t} cotas presenteadas</div>`:''}
+  ${i.prize?`<div class="prize">${i.prize}</div>`:''}
+  ${d?'<span class="tag">✔ Já conquistado, obrigado!</span>':`<div class="step"><button onclick="chg('${i.id}',-1)">−</button><b id="q-${i.id}">${cart[i.id]||0}</b><button onclick="chg('${i.id}',1)">+</button></div>`}
+  </div></div>`;
+}
+function render(){
+  let h="";
+  S.forEach(s=>{const it=s.items.filter(i=>left(i)>0);if(!it.length)return;
+    h+=`<section><h2>${s.title}</h2><div class="line"></div>${s.sub?`<p class="sub">${s.sub}</p>`:''}<div class="grid">${it.map(card).join("")}</div></section>`});
+  const dn=all.filter(i=>left(i)<=0);
+  const part=all.filter(i=>i.got>0&&left(i)>0);
+  if(dn.length||part.length)h+=`<section style="background:var(--soft);max-width:none"><div style="max-width:1000px;margin:auto"><h2>Já conquistamos ✨</h2><div class="line"></div><p class="sub">Graças a vocês, esses itens já estão garantidos</p><div class="grid">${[...dn,...part].map(i=>`<div class="card done"><div class="img" style="background-image:url(fotos/${i.id}.jpg)">${i.e}</div><div class="body"><h3>${i.n}</h3><span class="tag">${left(i)<=0?'✔ Completo':i.got+' de '+i.t+' cotas'}</span></div></div>`).join("")}</div></div></section>`;
+  $("app").innerHTML=h;
+  const goal=all.reduce((a,i)=>a+i.p*i.t,0),got=all.reduce((a,i)=>a+i.p*i.got,0);
+  $("gbar").style.width=(got/goal*100)+"%";
+  $("gtxt").textContent=`${R(got)} arrecadados de ${R(goal)} (${Math.round(got/goal*100)}%)`;
+  upd();
+}
+function chg(id,d){const i=all.find(x=>x.id==id);cart[id]=Math.max(0,Math.min(left(i),(cart[id]||0)+d));$("q-"+id).textContent=cart[id];upd()}
+const items=()=>all.filter(i=>cart[i.id]>0);
+const total=()=>items().reduce((a,i)=>a+i.p*cart[i.id],0);
+function upd(){const n=items().reduce((a,i)=>a+cart[i.id],0);$("bar").classList.toggle("on",n>0);$("cnt").textContent=n+(n>1?" itens":" item");$("sum").textContent=R(total())}
+
+/* Pix estático (BR Code) */
+const f=(id,v)=>id+String(v.length).padStart(2,"0")+v;
+const clean=(s,m)=>s.normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[^A-Za-z0-9 ]/g,"").toUpperCase().slice(0,m);
+function crc(s){let c=0xFFFF;for(let i=0;i<s.length;i++){c^=s.charCodeAt(i)<<8;for(let j=0;j<8;j++)c=c&0x8000?((c<<1)^0x1021)&0xFFFF:(c<<1)&0xFFFF}return c.toString(16).toUpperCase().padStart(4,"0")}
+function pix(v){const b=f("00","01")+f("01","11")+f("26",f("00","BR.GOV.BCB.PIX")+f("01",PIX_KEY))+f("52","0000")+f("53","986")+f("54",v.toFixed(2))+f("58","BR")+f("59",clean(PIX_NOME,25))+f("60",clean(PIX_CIDADE,15))+f("62",f("05","LUADEMEL"))+"6304";return b+crc(b)}
+
+function openPay(){
+  $("list").innerHTML=items().map(i=>`<li>${cart[i.id]}× ${i.n} — ${R(i.p*cart[i.id])}</li>`).join("");
+  $("mtot").textContent=R(total());
+  const c=pix(total());$("code").value=c;$("qr").innerHTML="";
+  new QRCode($("qr"),{text:c,width:210,height:210});
+  $("modal").classList.add("on");
+}
+function copyPix(){$("code").select();navigator.clipboard.writeText($("code").value);$("cp").textContent="✔ Copiado!";setTimeout(()=>$("cp").textContent="Copiar código Pix",2000)}
+function wpp(){
+  const m=`Olá! Sou ${$("nome").value||"(seu nome)"} e acabei de fazer um Pix de ${R(total())} para a lua de mel 💕\nPresentes:\n`+items().map(i=>`- ${cart[i.id]}× ${i.n}`).join("\n")+"\n(vou anexar o comprovante)";
+  window.open(`https://wa.me/${WHATSAPP}?text=${encodeURIComponent(m)}`,"_blank");
+}
+render();
+</script>
+</body>
+</html>
