@@ -67,15 +67,31 @@ footer{text-align:center;padding:30px;color:#7b6a60;font-size:.9rem}
   </div>
 </section>
 
+<!-- ====== SEÇÃO "NOSSA VIAGEM" (substitui a seção antiga) ====== -->
+<style>
+.mapa{position:relative;container-type:inline-size;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px #0003;background:#f4ead2}
+.mapa>img{width:100%;display:block}
+.ponto{position:absolute;width:11.25%;transform:translate(-50%,-50%)}
+.ponto .foto{position:relative;aspect-ratio:1;border-radius:50%;overflow:hidden;border:max(3px,.6cqw) solid #c79a3b;background:#fff7e3;box-shadow:0 .5cqw 1.2cqw #0004;display:flex;align-items:center;justify-content:center;font-size:3.5cqw}
+.ponto .foto img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ponto b{position:absolute;left:50%;top:100%;transform:translate(-50%,-25%);background:#7a1f35;color:#fff;border:max(2px,.25cqw) solid #c79a3b;border-radius:3cqw;padding:.3cqw 1.6cqw;font:700 1.7cqw Georgia,serif;white-space:nowrap}
+</style>
 <section style="background:var(--soft);max-width:none">
   <div style="max-width:1000px;margin:auto">
     <h2>Nossa viagem</h2><div class="line"></div>
-    <div class="two">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bruxelas, Antuérpia, Ghent, Bruges e Tournai: sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
-      <div class="photo" style="background-image:url(fotos/mapa.jpg)">🗺️ fotos/mapa.jpg</div>
+    <p style="text-align:center;max-width:700px;margin:0 auto 28px">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Bruxelas, Antuérpia, Ghent, Bruges e Leuven: sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <div class="mapa">
+      <img src="fotos/mapa-base.jpg" alt="Mapa da nossa viagem pela Bélgica">
+      <div class="ponto" style="left:12.50%;top:11.67%"><div class="foto">🏰<img src="fotos/ponto-bruges.png" alt="Bruges" onerror="this.remove()"></div><b>Bruges</b></div>
+      <div class="ponto" style="left:15.62%;top:35.83%"><div class="foto">🏰<img src="fotos/ponto-gent.jpeg" alt="Ghent" onerror="this.remove()"></div><b>Ghent</b></div>
+      <div class="ponto" style="left:37.50%;top:52.50%"><div class="foto">🏛️<img src="fotos/ponto-bruxelas.jpg" alt="Bruxelas" onerror="this.remove()"></div><b>Bruxelas</b></div>
+      <div class="ponto" style="left:55.62%;top:8.33%"><div class="foto">🚉<img src="fotos/ponto-antuerpia.jpeg" alt="Antuérpia" onerror="this.remove()"></div><b>Antuérpia</b></div>
+      <div class="ponto" style="left:71.25%;top:24.17%"><div class="foto">⛪<img src="fotos/ponto-mechelen.png" alt="Mechelen" onerror="this.remove()"></div><b>Mechelen</b></div>
+      <div class="ponto" style="left:73.75%;top:45.42%"><div class="foto">🏛️<img src="fotos/ponto-leuven.jpg" alt="Leuven" onerror="this.remove()"></div><b>Leuven</b></div>
     </div>
   </div>
 </section>
+
 
 <div id="app"></div>
 
