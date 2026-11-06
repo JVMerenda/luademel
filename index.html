@@ -22,7 +22,8 @@ section>h2{color:var(--wine);font-size:2rem;text-align:center;margin-bottom:6px}
 .photo{aspect-ratio:4/3;border-radius:16px;background:var(--soft) center/cover;box-shadow:0 8px 24px #0002;display:flex;align-items:center;justify-content:center;color:#a08c70;font-size:.9rem}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:18px}
 .card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 4px 16px #0001;display:flex;flex-direction:column}
-.img{height:130px;background:var(--soft) center/cover;display:flex;align-items:center;justify-content:center;font-size:2.6rem}
+.img{position:relative;height:260px;background:var(--soft);display:flex;align-items:center;justify-content:center;font-size:3.5rem;overflow:hidden}
+.img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .body{padding:14px;display:flex;flex-direction:column;gap:8px;flex:1}
 .body h3{font-size:1.05rem}
 .price{color:var(--wine);font-weight:700;font-size:1.2rem}
@@ -169,7 +170,7 @@ const left=i=>i.t-i.got;
 
 function card(i){
   const d=left(i)<=0,pct=i.got/i.t*100;
-  return `<div class="card ${d?'done':''}"><div class="img" style="background-image:url(fotos/${i.id}.jpg)">${i.e}</div>
+  return `<div class="card ${d?'done':''}"><div class="img">${i.e}<img src="fotos/${i.id}.jpg" alt="${i.n}" onerror="this.remove()"></div>
   <div class="body"><h3>${i.n}</h3><div class="price">${R(i.p)}${i.t>1?' <span class="small">/ cota</span>':''}</div>
   ${i.t>1?`<div class="bar"><i style="width:${pct}%"></i></div><div class="small">${i.got} de ${i.t} cotas presenteadas</div>`:''}
   ${i.prize?`<div class="prize">${i.prize}</div>`:''}
