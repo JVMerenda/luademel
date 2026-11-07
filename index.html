@@ -50,6 +50,15 @@ section>h2{color:var(--wine);font-size:2rem;text-align:center;margin-bottom:6px}
 textarea{width:100%;height:70px;font-size:.75rem;border-radius:8px;padding:8px;border:1px solid #ccc}
 footer{text-align:center;padding:30px;color:#7b6a60;font-size:.9rem}
 @media(max-width:700px){.two{grid-template-columns:1fr}}
+.passos{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:28px}
+.passo{background:#fff;border-radius:14px;padding:18px;box-shadow:0 4px 16px #0001;text-align:center}
+.passo span{display:inline-flex;width:38px;height:38px;border-radius:50%;background:var(--wine);color:#fff;font-weight:700;align-items:center;justify-content:center;margin-bottom:6px}
+.passo h3{font-size:1.1rem;margin-bottom:6px;color:var(--wine)}
+.passo p{font-size:.9rem;margin:0}
+.sorteio{background:#fff6dd;border:2px dashed var(--gold);border-radius:14px;padding:20px 24px}
+.sorteio h3{color:var(--wine);margin-bottom:8px}
+.sorteio ul{padding-left:20px;margin:10px 0 0}
+.sorteio li{margin-bottom:8px}
 </style>
 </head>
 <body>
@@ -102,9 +111,28 @@ footer{text-align:center;padding:30px;color:#7b6a60;font-size:.9rem}
 
 <div id="app"></div>
 
-<section style="text-align:center">
+<section style="max-width:900px">
   <h2>Como funciona</h2><div class="line"></div>
-  <p>1) Escolha seus presentes · 2) Pague via Pix (QR Code ou copia e cola) · 3) Envie o comprovante pelo WhatsApp para receber seus números do sorteio e nosso agradecimento.</p>
+  <p class="sub">É rápido, sem cadastro e sem taxas. O dinheiro vai direto para nós, via Pix.</p>
+
+  <div class="passos">
+    <div class="passo"><span>1</span><h3>Escolha</h3><p>Use os botões <b>+</b> e <b>−</b> nos presentes que quiser. Pode escolher vários, e nos itens em cotas, mais de uma cota.</p></div>
+    <div class="passo"><span>2</span><h3>Pague via Pix</h3><p>Clique em <b>Finalizar presente</b>. O QR Code e o código "copia e cola" já vêm com o valor certo. Um único Pix cobre tudo que você escolheu.</p></div>
+    <div class="passo"><span>3</span><h3>Avise-nos</h3><p>Digite seu nome e clique em <b>Já paguei</b>. O WhatsApp abre com uma mensagem pronta, com seus presentes. É só anexar o comprovante e enviar.</p></div>
+    <div class="passo"><span>4</span><h3>Receba a confirmação</h3><p>Conferimos o Pix e respondemos com o nosso agradecimento e, nos itens com sorteio, com os seus números da sorte.</p></div>
+  </div>
+
+  <div class="sorteio">
+    <h3>🎁 Como funcionam os sorteios</h3>
+    <p>Quatro presentes têm sorteio: <b>Alimentação</b> (vinho francês + chocolate belga), <b>Chocolate e waffles</b> (chocolate belga), <b>Cerveja belga</b> (uma garrafa) e <b>Hospedagem</b> (cerveja belga + chocolate). Todos os prêmios serão trazidos da Bélgica.</p>
+    <ul>
+      <li><b>Cada cota paga vale 1 número.</b> Quem pegar 3 cotas de alimentação, por exemplo, concorre com 3 números.</li>
+      <li><b>Cada item tem o seu próprio sorteio e a sua própria numeração.</b> Quem contribuir para mais de um item recebe números em cada um deles.</li>
+      <li><b>Como você descobre o seu número:</b> depois que confirmamos o seu Pix, mandamos pelo WhatsApp, na mesma conversa do comprovante, a lista dos seus números. Eles são distribuídos em ordem, conforme a confirmação dos pagamentos (por exemplo: "alimentação, números 7, 8 e 9").</li>
+      <li><b>O sorteio</b> será divulgado no site e pelo WhatsApp, e o resultado será conferido pela Loteria Federal ou ao vivo no Instagram, para todos acompanharem. O ganhador será avisado por mensagem.</li>
+      <li>Presentes em item único (trem, atrações, lembrancinhas) não têm sorteio, mas têm o nosso agradecimento e uma foto de lá. 💕</li>
+    </ul>
+  </div>
 </section>
 <footer>Feito com amor ❤️ · Obrigado por fazer parte desse sonho!</footer>
 
