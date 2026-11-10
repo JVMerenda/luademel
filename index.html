@@ -173,31 +173,32 @@ const WHATSAPP="5517992150909";           // seu WhatsApp com DDI+DDD, só núme
    Fotos: coloque em fotos/ID.jpg (ex.: fotos/gravensteen.jpg) */
 const S=[
 {title:"Nos ajude com o transporte",sub:"Cada trecho de trem da nossa viagem",items:[
- {id:"bru-ant",n:"Bruxelas → Antuérpia",p:150,t:1,got:0,e:"🚆"},
- {id:"bru-leu",n:"Bruxelas → Leuven",p:150,t:1,got:0,e:"🚆"},
- {id:"ant-gnt",n:"Antuérpia → Ghent",p:200,t:1,got:0,e:"🚆"},
- {id:"gnt-brg",n:"Ghent → Bruges",p:150,t:1,got:0,e:"🚆"},
- {id:"brg-bru",n:"Bruges → Bruxelas",p:250,t:1,got:0,e:"🚆"},
- {id:"publico",n:"Transporte público",p:150,t:1,got:0,e:"🚌"},
- {id:"bike-joao",n:"Aluguel de bicicleta para o João",p:250,t:1,got:0,e:"🚲"},
- {id:"bike-juli",n:"Aluguel de bicicleta para a Juliana",p:250,t:1,got:0,e:"🚲"}]},
+ {id:"bru-ant",n:"Bruxelas → Antuérpia",p:150,t:1,got:0,e:"🚆",img:"trem1.jpeg"},
+ {id:"bru-leu",n:"Bruxelas → Leuven",p:150,t:1,got:0,e:"🚆",img:"trem2.jpeg"},
+ {id:"ant-gnt",n:"Antuérpia → Ghent",p:200,t:1,got:0,e:"🚆",img:"trem4.jpeg"},
+ {id:"gnt-brg",n:"Ghent → Bruges",p:150,t:1,got:0,e:"🚆",img:"trem5.jpeg"},
+ {id:"brg-bru",n:"Bruges → Bruxelas",p:250,t:1,got:0,e:"🚆",img:"trem3.jpeg"},
+ {id:"publico",n:"Transporte público",p:150,t:1,got:0,e:"🚌",img:"tram.jpeg"},
+ {id:"bike-joao",n:"Aluguel de bicicleta para o João",p:250,t:1,got:0,e:"🚲",img:"bikejoao.jpeg"},
+ {id:"bike-juli",n:"Aluguel de bicicleta para a Juliana",p:250,t:1,got:0,e:"🚲",img:"bikeju.jpeg"}]},
 {title:"Nos ajude com a alimentação",sub:"Para comermos bem em cada cidade",items:[
- {id:"comida",n:"Cota de alimentação",p:200,t:30,got:0,e:"🍽️",prize:"🎁 Cada cota = 1 número no sorteio de uma garrafa de vinho francês + chocolate belga"}]},
+ {id:"comida",n:"Cota de alimentação",p:200,t:30,got:0,e:"🍽️",img:"comida.jpeg",prize:"🎁 Cada cota = 1 número no sorteio de uma garrafa de vinho francês + chocolate belga"}]},
 {title:"Degustação de chocolate belga e waffles",sub:"Uma tradição belga: o país tem uma das culturas chocolateiras mais admiradas do mundo, dos pralinés artesanais aos waffles quentinhos de Bruxelas e de Liège.",items:[
  {id:"waffle",n:"Cota de chocolate e waffles",p:100,t:8,got:0,e:"🧇",prize:"🎁 Sorteio de chocolate belga"}]},
 {title:"Degustação de cerveja belga",sub:"As cervejas belgas são feitas para ser apreciadas com calma e estão entre as melhores do mundo, com mais de mil rótulos. Há trapistas, dubbels, tripels, witbiers, lambics e muito mais, e quase toda cidade tem a sua cervejaria.",items:[
  {id:"beer",n:"Cota de cerveja belga",p:100,t:8,got:0,e:"🍺",prize:"🎁 Sorteio de uma garrafa de cerveja belga"}]},
 {title:"Lembrancinhas",sub:"Para trazer um pedacinho da Bélgica",items:[
- {id:"lembranca",n:"Lembrancinhas",p:250,t:1,got:0,e:"🎁"}]},
+ {id:"lembranca",n:"Lembrancinhas",p:250,t:1,got:0,e:"🎁",img:"lembrancinhas.jpeg"}]},
 {title:"Atrações",sub:"Experiências que queremos viver",items:[
- {id:"museu-choco",n:"Museu do Chocolate (Bruxelas)",p:200,t:1,got:0,e:""},
- {id:"catedral",n:"Catedral de Nossa Senhora (Antuérpia)",p:150,t:1,got:0,e:""},
- {id:"gravensteen",n:"Castelo dos Condes (Ghent)",p:150,t:1,got:0,e:""},
- {id:"belfort",n:"Campanário de Ghent",p:150,t:1,got:0,e:""},
- {id:"barco",n:"Passeio de barco pelos canais de Bruges",p:200,t:1,got:0,e:""},
- {id:"santo-sangue",n:"Basílica do Santo Sangue (Bruges)",p:150,t:1,got:0,e:""}]},
+ {id:"museu-choco",n:"Museu do Chocolate (Bruxelas)",p:200,t:1,got:0,e:"🍫"},
+ {id:"catedral",n:"Catedral de Nossa Senhora (Antuérpia)",p:150,t:1,got:0,e:"⛪"},
+ {id:"rsl",n:"Museu Red Star Line (Antuérpia)",p:150,t:1,got:0,e:"🚢",img:"RSL.jpeg"},
+ {id:"gravensteen",n:"Castelo dos Condes (Ghent)",p:150,t:1,got:0,e:"🏰"},
+ {id:"belfort",n:"Campanário de Ghent",p:150,t:1,got:0,e:"🔔"},
+ {id:"barco",n:"Passeio de barco pelos canais de Bruges",p:200,t:1,got:0,e:"⛴️"},
+ {id:"santo-sangue",n:"Basílica do Santo Sangue (Bruges)",p:150,t:1,got:0,e:"✝️"}]},
 {title:"Hospedagem",sub:"Para termos um cantinho aconchegante",items:[
- {id:"hotel",n:"Cota de hospedagem",p:150,t:10,got:0,e:"🛏️",prize:"🎁 Cada cota = 1 número no sorteio de cerveja belga + chocolate"}]}
+ {id:"hotel",n:"Cota de hospedagem",p:150,t:10,got:0,e:"🛏️",img:"hotel.jpeg",prize:"🎁 Cada cota = 1 número no sorteio de cerveja belga + chocolate"}]}
 ];
 
 /* ============ CÓDIGO ============ */
@@ -207,7 +208,7 @@ const left=i=>i.t-i.got;
 
 function card(i){
   const d=left(i)<=0,pct=i.got/i.t*100;
-  return `<div class="card ${d?'done':''}"><div class="img">${i.e}<img src="fotos/${i.id}.jpg" alt="${i.n}" onerror="this.remove()"></div>
+  return `<div class="card ${d?'done':''}"><div class="img">${i.e}<img src="fotos/${i.img||i.id+'.jpg'}" alt="${i.n}" onerror="this.remove()"></div>
   <div class="body"><h3>${i.n}</h3><div class="price">${R(i.p)}${i.t>1?' <span class="small">/ cota</span>':''}</div>
   ${i.t>1?`<div class="bar"><i style="width:${pct}%"></i></div><div class="small">${i.got} de ${i.t} cotas presenteadas</div>`:''}
   ${i.prize?`<div class="prize">${i.prize}</div>`:''}
